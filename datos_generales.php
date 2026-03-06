@@ -12,19 +12,21 @@ function obtenerDatosSiat(int $codigoPuntoVenta): array
 {
     $config = [
         'nit' => '283728026',
-        'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvLm1vcmVqb243OUBnbWFpbC5jb20iLCJjb2RpZ29TaXN0ZW1hIjoiNTgzMUM3RkIxMkM5MTc1QTIyNyIsIm5pdCI6Ikg0c0lBQUFBQUFBQUFET3lNRFkzc2pBd01nTUFPQ1BOMkFrQUFBQT0iLCJpZCI6NTE4MDAxNSwiZXhwIjoxODAxNDI0NjA3LCJpYXQiOjE3NzI3NTQxNzgsIm5pdERlbGVnYWRvIjoyODM3MjgwMjYsInN1YnNpc3RlbWEiOiJTRkUifQ.EJFWLqh-xK6pVpCxzc6KKWa3f4HjdjeSRCgFxfzR-DDSElfA6EyHbj3fXxeJ7w2FXkX1FcETxOLZkW8NJEgyVw',
+        'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJndXN0YXZvLm1vcmVqb243OUBnbWFpbC5jb20iLCJjb2RpZ29TaXN0ZW1hIjoiNTgzMUYzNjhGMzJERkEzOTcyNyIsIm5pdCI6Ikg0c0lBQUFBQUFBQUFET3lNRFkzc2pBd01nTUFPQ1BOMkFrQUFBQT0iLCJpZCI6NTE4MDAxNSwiZXhwIjoxODA0MjIzMzUxLCJpYXQiOjE3NzI3ODgxMjEsIm5pdERlbGVnYWRvIjoyODM3MjgwMjYsInN1YnNpc3RlbWEiOiJTRkUifQ.wTcFNjiSfW3KlvR1nuNy7DAHWdqf2l4HftwfdA5JnA3jERairQAqgF464FB5m2o0ZTdg-Lg6A5PzsKlqzpIFog',
         'codigoAmbiente' => 2,
-        'codigoSistema' => '5831C7FB12C9175A227',
+        'codigoSistema' => '5831F368F32DFA39727',
         'codigoSucursal' => 0,
-        'codigoModalidad' => 1,
+        'codigoModalidad' => 2,
         'puntosVenta' => [
             0 => [
-                'cuis' => '325D3D86',
-                'cufd' => '',
+                'cuis' => '657D774B',
+                'cufd' => 'FBQTlDY2xjQUE=JERkEzOTcyNw==Q2UlallGSERhVUNTgzMUYzNjhGMz',
+                'codigoControl' => '85CECB4914AAF74',
             ],
             1 => [
-                'cuis' => 'A2FD4AB9',
-                'cufd' => '',
+                'cuis' => '8B99CCC3',
+                'cufd' => 'JBQTlDY2xjQUE=JERkEzOTcyNw==QzljWVpGSERhVUNTgzMUYzNjhGMz',
+                'codigoControl' => '1EF82D4914AAF74',
             ],
         ],
     ];
@@ -45,5 +47,6 @@ function obtenerDatosSiat(int $codigoPuntoVenta): array
         'codigoPuntoVenta' => $codigoPuntoVenta,
         'cuis' => $puntoVenta['cuis'],
         'cufd' => $puntoVenta['cufd'],
+        'codigoControl' => $puntoVenta['codigoControl'],
     ];
 }

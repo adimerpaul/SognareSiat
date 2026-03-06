@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <facturaComputarizadaCompraVenta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="facturaComputarizadaCompraVenta.xsd">
   <cabecera>
-    <nitEmisor>555441026</nitEmisor>
+    <nitEmisor>283728026</nitEmisor>
     <razonSocialEmisor>Carlos Loza</razonSocialEmisor>
     <municipio>La Paz</municipio>
     <telefono>78595684</telefono>
     <numeroFactura>1</numeroFactura>
-    <cuf>26013BB3D905F47DC0B5891E1C8E89DD2A168606A10046CDA7DF8AF74</cuf>
-    <cufd>FBQTlDcDM0QUE=k0ODUyMTVCQkU=Q286TldGVUNhVUMzUyMjkyREE1Mz</cufd>
+    <cuf>1369D878C0C78B17C5BF9713988A2411EE998606AD1EF82D4914AAF74</cuf>
+    <cufd>JBQTlDY2xjQUE=JERkEzOTcyNw==QzljWVpGSERhVUNTgzMUYzNjhGMz</cufd>
     <codigoSucursal>0</codigoSucursal>
     <direccion>AV. JORGE LOPEZ #123</direccion>
-    <codigoPuntoVenta>0</codigoPuntoVenta>
-    <fechaEmision>2026-02-19T05:59:39.001</fechaEmision>
+    <codigoPuntoVenta>1</codigoPuntoVenta>
+    <fechaEmision>2026-03-06T05:31:50.044</fechaEmision>
     <nombreRazonSocial>Mi razon social</nombreRazonSocial>
     <codigoTipoDocumentoIdentidad>1</codigoTipoDocumentoIdentidad>
     <numeroDocumento>5115889</numeroDocumento>
@@ -35,8 +35,8 @@
     <codigoDocumentoSector>1</codigoDocumentoSector>
   </cabecera>
   <detalle>
-    <actividadEconomica>463000</actividadEconomica>
-    <codigoProductoSin>62121</codigoProductoSin>
+    <actividadEconomica>106000</actividadEconomica>
+    <codigoProductoSin>23210</codigoProductoSin>
     <codigoProducto>JN-131231</codigoProducto>
     <descripcion>JUGO DE NARANJA EN VASO</descripcion>
     <cantidad>1</cantidad>

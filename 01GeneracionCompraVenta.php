@@ -4,36 +4,27 @@ use RobRichards\XMLSecLibs\XMLSecurityKey;
 require 'vendor/autoload.php';
 
 require 'CUF.php';
+require_once __DIR__ . '/datos_generales.php';
 
 
 
-date_default_timezone_set('America/La_Paz');
-$cuis1="ECB7F858";
-$codigo1="VCQUE5Q3AzNEFBk0ODUyMTVCQkU=Q3zDk0tIVVlKWlMzUyMjkyREE1Mz";
-$codigoControl1="711980CB7B12F74"; //2023-03-01T16:56:05.359-04:00
-
-$cuis0="CB4C4B6F";
-$codigo0="FBQTlDcDM0QUE=k0ODUyMTVCQkU=Q286TldGVUNhVUMzUyMjkyREE1Mz";
-$codigoControl0="0046CDA7DF8AF74"; //2023-03-01T16:55:06.383-04:00
-
-
-$codigoPuntoVenta=0;
-$codigoControl=$codigoControl0;
-$cufd=$codigo0;
-$cuis=$cuis0;
-
-$token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJheWFsYWVkc29uMjAxM0BnbWFpbC5jb20iLCJjb2RpZ29TaXN0ZW1hIjoiMzUyMjkyREE1Mzk0ODUyMTVCQkUiLCJuaXQiOiJINHNJQUFBQUFBQUFBRE0xTlRVeE1UUXdNZ01BbnFhbE1Ba0FBQUE9IiwiaWQiOjUwNjIzNzIsImV4cCI6MTc2NzIxMDc2NywiaWF0IjoxNzU4NjcxNTM3LCJuaXREZWxlZ2FkbyI6NTU1NDQxMDI2LCJzdWJzaXN0ZW1hIjoiU0ZFIn0.g5L5FEVm6OUo0h1nzlf3iATSp_THBZMVWFU8nPsgzooncshKMnhILmg5O8m5T6UqG-sbDUWNE6ClIquVW0uPRw";
-$codigoAmbiente="2";
+$siat = obtenerDatosSiat(1);
+$codigoPuntoVenta = $siat['codigoPuntoVenta'];
+$codigoControl = $siat['codigoControl'];
+$cufd = $siat['cufd'];
+$cuis = $siat['cuis'];
+$token = $siat['token'];
+$codigoAmbiente = $siat['codigoAmbiente'];
 $codigoDocumentoSector=1;
 $codigoEmision=1;
-$codigoModalidad=2;
+$codigoModalidad = $siat['codigoModalidad'];
 
-$cantidad=124;
+$cantidad=125;
 
-$codigoSistema="352292DA539485215BBE";
-$codigoSucursal=0;
+$codigoSistema = $siat['codigoSistema'];
+$codigoSucursal = $siat['codigoSucursal'];
 
-$nit="555441026";
+$nit = $siat['nit'];
 $tipoFacturaDocumento=1;//1 con credito 2 sin credito 3 nota
 
 
@@ -69,7 +60,7 @@ for ($i=1;$i<=$cantidad;$i++){
         <numeroFactura>1</numeroFactura>
         <cuf>$cuf</cuf>
         <cufd>$cufd</cufd>
-        <codigoSucursal>0</codigoSucursal>
+        <codigoSucursal>$codigoSucursal</codigoSucursal>
         <direccion>AV. JORGE LOPEZ #123</direccion>
         <codigoPuntoVenta>$codigoPuntoVenta</codigoPuntoVenta>
         <fechaEmision>$fechaEnvio</fechaEmision>
@@ -119,7 +110,7 @@ for ($i=1;$i<=$cantidad;$i++){
         <numeroFactura>1</numeroFactura>
         <cuf>$cuf</cuf>
         <cufd>$cufd</cufd>
-        <codigoSucursal>0</codigoSucursal>
+        <codigoSucursal>$codigoSucursal</codigoSucursal>
         <direccion>AV. JORGE LOPEZ #123</direccion>
     <codigoPuntoVenta>$codigoPuntoVenta</codigoPuntoVenta>
         <fechaEmision>$fechaEnvio</fechaEmision>
@@ -146,8 +137,8 @@ for ($i=1;$i<=$cantidad;$i++){
         <codigoDocumentoSector>1</codigoDocumentoSector>
     </cabecera>
     <detalle>
-        <actividadEconomica>463000</actividadEconomica>
-        <codigoProductoSin>62121</codigoProductoSin>
+        <actividadEconomica>106000</actividadEconomica>
+        <codigoProductoSin>23210</codigoProductoSin>
         <codigoProducto>JN-131231</codigoProducto>
         <descripcion>JUGO DE NARANJA EN VASO</descripcion>
         <cantidad>1</cantidad>

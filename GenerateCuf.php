@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/datos_generales.php';
 
-$siat = obtenerDatosSiat(0);
+$siat = obtenerDatosSiat(1);
 $codigoPuntoVenta = $siat['codigoPuntoVenta'];
 $cuis = $siat['cuis'];
 $nit = $siat['nit'];
@@ -12,7 +12,7 @@ $codigoSistema = $siat['codigoSistema'];
 $codigoSucursal = $siat['codigoSucursal'];
 $modalidad = $siat['codigoModalidad'];
 
-$contador = 124;
+$contador = 1;
 
 for ($i=0; $i < $contador; $i++) {
     $client = new \SoapClient("https://pilotosiatservicios.impuestos.gob.bo/v2/FacturacionCodigos?WSDL",  [

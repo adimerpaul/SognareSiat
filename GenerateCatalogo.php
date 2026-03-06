@@ -11,7 +11,7 @@ $codigoAmbiente = $siat['codigoAmbiente'];
 $codigoSistema = $siat['codigoSistema'];
 $codigoSucursal = $siat['codigoSucursal'];
 
-$contador = 124;
+$contador = 1;
 
 for ($i=0; $i < $contador; $i++) {
     $client = new \SoapClient("https://pilotosiatservicios.impuestos.gob.bo/v2/FacturacionSincronizacion?WSDL",  [
@@ -38,7 +38,7 @@ for ($i=0; $i < $contador; $i++) {
     ];
     $result= $client->sincronizarActividades($data);
 //    error_log(json_encode($result));
-//    var_dump($result);
+    var_dump($result);
 //    exit();
 
     $result= $client->sincronizarFechaHora($data);
@@ -54,8 +54,8 @@ for ($i=0; $i < $contador; $i++) {
 //    var_dump($result);
 
     $result= $client->sincronizarListaProductosServicios($data);
-    error_log(json_encode($result));
-//    var_dump($result);
+//    error_log(json_encode($result));
+    var_dump($result);
 
     $result= $client->sincronizarParametricaEventosSignificativos($data);
 //    var_dump($result);
