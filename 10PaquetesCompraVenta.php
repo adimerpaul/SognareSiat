@@ -4,30 +4,23 @@ use RobRichards\XMLSecLibs\XMLSecurityKey;
 require 'vendor/autoload.php';
 
 require 'CUF.php';
+require_once __DIR__ . '/datos_generales.php';
 
 
-
-date_default_timezone_set('America/La_Paz');
-$cuis1="ECB7F858";
-$codigo1="JBQTlDcDM0QUE=k0ODUyMTVCQkU=Q3lpbGdUQktaVUMzUyMjkyREE1Mz";
-$codigoControl1="11650A8C1D12F74"; //2023-03-01T16:56:05.359-04:00
-
-$cuis0="CB4C4B6F";
-$codigo0="FBQTlDcDM0QUE=k0ODUyMTVCQkU=Q28jSGdUQktaVUMzUyMjkyREE1Mz";
-$codigoControl0="4251998C1D12F74"; //2023-03-01T16:55:06.383-04:00
 
 //3573986
-$codigoPuntoVenta=0;
-$codigoControl=$codigoControl0;
-$cufd=$codigo0;
-$cuis=$cuis0;
+$siat = obtenerDatosSiat(1);
+$codigoPuntoVenta = $siat['codigoPuntoVenta'];
+$codigoControl = $siat['codigoControl'];
+$cufd = $siat['cufd'];
+$cuis = $siat['cuis'];
 
 
-$cantidad=1;
-$codigoMotivoEvento=7;
-$h="19";
-$m="47";
-$s="01";
+$cantidad=500;
+$codigoMotivoEvento=4;
+$h="05";
+$m="40";
+$s="00";
 
 //$codigoEvento=3629231;
 
@@ -35,16 +28,16 @@ $s="01";
 //$s2=(int)$s+1;
 
 
-$token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJheWFsYWVkc29uMjAxM0BnbWFpbC5jb20iLCJjb2RpZ29TaXN0ZW1hIjoiMzUyMjkyREE1Mzk0ODUyMTVCQkUiLCJuaXQiOiJINHNJQUFBQUFBQUFBRE0xTlRVeE1UUXdNZ01BbnFhbE1Ba0FBQUE9IiwiaWQiOjUwNjIzNzIsImV4cCI6MTc2NzIxMDc2NywiaWF0IjoxNzU4NjcxNTM3LCJuaXREZWxlZ2FkbyI6NTU1NDQxMDI2LCJzdWJzaXN0ZW1hIjoiU0ZFIn0.g5L5FEVm6OUo0h1nzlf3iATSp_THBZMVWFU8nPsgzooncshKMnhILmg5O8m5T6UqG-sbDUWNE6ClIquVW0uPRw";
-$codigoAmbiente="2";
+$token = $siat['token'];
+$codigoAmbiente = $siat['codigoAmbiente'];
 $codigoDocumentoSector=1; //1 compra venta, 13 servicios basicos, 24 nota credito debito, 29 nota conciliacion
 $codigoEmision=2;//1 online, 2 offline, 3 masiva
-$codigoModalidad=2;
+$codigoModalidad = $siat['codigoModalidad'];
 
-$codigoSistema="352292DA539485215BBE";
-$codigoSucursal=0;
+$codigoSistema = $siat['codigoSistema'];
+$codigoSucursal = $siat['codigoSucursal'];
 
-$nit="555441026";
+$nit = $siat['nit'];
 $tipoFacturaDocumento=1;
 
 
@@ -53,7 +46,7 @@ $tipoFacturaDocumento=1;
 //$temision=1; //1 online, 2 offline, 3 masiva
 $cdf=1; // 1 con credito fiscal 2 sin credito fiscal 3 nota credito debito
 $nf=1;
-$cafc="1011FCEF12A2C";
+//$cafc="1011FCEF12A2C";
 
 for ($y=1;$y<=10;$y++){
     deleteFile();
@@ -108,7 +101,7 @@ for ($y=1;$y<=10;$y++){
         <numeroFactura>1</numeroFactura>
         <cuf>$cuf</cuf>
         <cufd>$cufd</cufd>
-        <codigoSucursal>0</codigoSucursal>
+        <codigoSucursal>$codigoSucursal</codigoSucursal>
         <direccion>AV. JORGE LOPEZ #123</direccion>
     <codigoPuntoVenta>$codigoPuntoVenta</codigoPuntoVenta>
         <fechaEmision>$fechaEnvio</fechaEmision>
@@ -127,7 +120,7 @@ for ($y=1;$y<=10;$y++){
         <montoGiftCard xsi:nil='true'/>
         <descuentoAdicional>1</descuentoAdicional>
         <codigoExcepcion xsi:nil='true'/>
-        <cafc>$cafc</cafc>
+        <cafc xsi:nil='true'/>
         <leyenda>Ley N° 453: Tienes derecho a recibir información sobre las características y contenidos de los
             servicios que utilices.
         </leyenda>
@@ -135,8 +128,8 @@ for ($y=1;$y<=10;$y++){
         <codigoDocumentoSector>1</codigoDocumentoSector>
     </cabecera>
     <detalle>
-        <actividadEconomica>463000</actividadEconomica>
-        <codigoProductoSin>62121</codigoProductoSin>
+        <actividadEconomica>106000</actividadEconomica>
+        <codigoProductoSin>23210</codigoProductoSin>
         <codigoProducto>JN-131231</codigoProducto>
         <descripcion>JUGO DE NARANJA EN VASO</descripcion>
         <cantidad>1</cantidad>
@@ -203,7 +196,7 @@ for ($y=1;$y<=10;$y++){
             "hashArchivo"=>$hashArchivo,
             "cantidadFacturas"=>$cantidad,
             "codigoEvento"=>$codigoEvento,
-            "cafc"=>$cafc,
+//            "cafc"=>$cafc,
         ]
     ]);
     var_dump($result);
